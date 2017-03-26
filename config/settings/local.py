@@ -13,6 +13,7 @@ Local settings
 import socket
 import os
 from .common import *  # noqa
+from django.utils.translation import ugettext_noop
 
 # DEBUG
 # ------------------------------------------------------------------------------
@@ -24,6 +25,15 @@ TEMPLATES[0]['OPTIONS']['debug'] = DEBUG
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
 # Note: This key only used for development and testing.
 SECRET_KEY = env('DJANGO_SECRET_KEY', default='m7nl!9qp1^nn-!@_za)sq7&865e9*u4jf-3sua8)c)qsangzic')
+
+LANGUAGES = [
+    ('es', ugettext_noop('Spanish')),
+    ('es-ar', ugettext_noop('Argentinian Spanish')),
+    ('es-co', ugettext_noop('Colombian Spanish')),
+    ('es-mx', ugettext_noop('Mexican Spanish')),
+    ('es-ni', ugettext_noop('Nicaraguan Spanish')),
+    ('es-ve', ugettext_noop('Venezuelan Spanish')),
+]
 
 # Mail settings
 # ------------------------------------------------------------------------------
